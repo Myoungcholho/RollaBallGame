@@ -11,12 +11,12 @@ struct myStruct
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed;
+    public float speed = 0;
 
     private Rigidbody rb;
     private myStruct myStruct;
-    private float movementX;
-    private float movementY;
+    private float movementX = 0;
+    private float movementY = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +41,10 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Y :" + movementY);
 
         rb.AddForce(movement * speed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.SetActive(false);
     }
 }
