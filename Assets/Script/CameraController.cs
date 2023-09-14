@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
 
     private Vector3 offset;
 
+    
     // Start는 첫 프레임 업데이트 이전에 호출됩니다.
     void Start()
     {
@@ -18,5 +19,6 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = player.transform.position + offset;
+        
     }
 }
